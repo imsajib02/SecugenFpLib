@@ -1,0 +1,2 @@
+include ':FDxSDKProFDAndroid'
+rootProject.name = 'secugenfplib'
