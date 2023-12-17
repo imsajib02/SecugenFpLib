@@ -1,6 +1,6 @@
 name: secugenfplib
-description: A new Flutter project.
-version: 0.0.1
+description: Flutter plugin for capturing and matching fingerprint using Secugen external USB device.
+version: 0.1.0
 homepage: https://github.com/imsajib02/SecugenFpLib
 
 environment:
