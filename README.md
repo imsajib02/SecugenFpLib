@@ -1,6 +1,7 @@
 # Secugen Fingerprint Reader
 
-A plugin that allows you to use the native Secugen FDx Pro SDK to capture and verify fingerprints using Secugen external USB device.
+A plugin that allows you to use the native Secugen FDx Pro SDK to capture and verify fingerprints using
+Secugen external USB device.
 
 ## Platform Support
 
@@ -9,6 +10,7 @@ A plugin that allows you to use the native Secugen FDx Pro SDK to capture and ve
 |   ✅    |
 
 ## Currently supported features
+
 * Initializing USB fingerprint device
 * Led control (On/Off)
 * Smart capture control (Enable/Disable)
@@ -27,6 +29,7 @@ import 'package:secugenfplib/secugenfplib.dart';
 ```
 
 #### Plugin Initialization
+
 ```dart
 final _secugenfplib = Secugenfplib();
 ```
@@ -151,10 +154,50 @@ try {
 }
 ```
 
-## Getting Started
+## Additional Configuration
 
-For help getting started with Flutter, view the online
-[documentation](https://flutter.io/).
+Add the configuration below to your Android `manifest`, if you want your app to open automatically
+whenever the USB device is connected. If USB permission is granted, this configuration allows your app
+to open immediately after the USB device is connected to the Android device.
 
-For help on editing plugin code, view the [documentation](https://flutter.io/platform-plugins/#edit-code).
+Inside the `<activity></activity>` tag, add:
 
+```xml
+<intent-filter>
+    <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+</intent-filter>
+
+<meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+    android:resource="@xml/device_filter" />
+```
+
+Next, inside the `app` >> `src` >> `main` >> `res` >> `xml` directory, add an `xml` file name `device_filter.xml`.
+Copy and paste the `xml` code below in the `device_filter.xml` file:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--SecuGen SDU03P 0x1162 0x1000-->
+    <usb-device vendor-id="4450" product-id="4096" />
+    <!--SecuGen SDU04P  0x1162 0x2000-->
+    <usb-device vendor-id="4450" product-id="8192" />
+    <!--SecuGen U20  0x1162 0x2200-->
+    <usb-device	vendor-id="4450" product-id="8704" />
+    <!--SecuGen U20-2  0x1162 0x22BA-->
+    <usb-device	vendor-id="4450" product-id="8890" />
+    <!--SecuGen UPx  0x1162 0x2201-->
+    <usb-device	vendor-id="4450" product-id="8705" />
+    <!--SecuGen U10  0x1162 0x2203-->
+    <usb-device	vendor-id="4450" product-id="8707" />
+    <!--SecuGen U20-AP  0x1162 0x2220-->
+    <usb-device	vendor-id="4450" product-id="8736" />
+    <!--SecuGen U20-A  0x1162 0x2240-->
+    <usb-device	vendor-id="4450" product-id="8768" />
+    <!--SecuGen U20-AP-A  0x1162 0x2360-->
+    <usb-device	vendor-id="4450" product-id="9056" />
+    <!--SecuGen U30-A  0x1162 0x2410-->
+    <usb-device	vendor-id="4450" product-id="9232" />
+    <!--SecuGen U-AIR  0x1162 0x2500-->
+    <usb-device	vendor-id="4450" product-id="9472" />
+</resources>
+```
