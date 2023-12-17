@@ -154,6 +154,10 @@ try {
 }
 ```
 
+## Example App
+
+![DemoAndroid](https://github.com/imsajib02/SecugenFpLib/blob/main/example/screenshots/android_example.gif)
+
 ## Additional Configuration
 
 Add the configuration below to your Android `manifest`, if you want your app to open automatically
