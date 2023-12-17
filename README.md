@@ -2,6 +2,12 @@
 
 A plugin that allows you to use the native Secugen FDx Pro SDK to capture and verify fingerprints using Secugen external USB device.
 
+## Platform Support
+
+| Android |
+| :-----: |
+|   ✅    |
+
 ## Currently supported features
 * Initializing USB fingerprint device
 * Led control (On/Off)
