@@ -156,7 +156,9 @@ try {
 
 ## Example App
 
-![DemoAndroid](https://github.com/imsajib02/SecugenFpLib/blob/main/example/screenshots/android_example.gif)
+<p>
+    <img src="https://github.com/imsajib02/SecugenFpLib/blob/main/example/screenshots/android_example.gif?raw=true"/>
+</p>
 
 ## Additional Configuration
 
